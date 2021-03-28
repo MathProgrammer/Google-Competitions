@@ -1,0 +1,22 @@
+Count the number of characters not equal to it's reflection. 
+
+-----
+
+void solve()
+{
+    int length, k;
+    string S;
+    cin >> length >> k >> S;
+    
+    int score = 0;
+    for(int front = 0, back = S.size() - 1; front < back; front++, back--)
+    {
+        if(S[front] != S[back])
+        {
+            score++;
+        }
+    }
+    
+    int answer = abs(score - k);
+    cout << answer << "\n";
+}
