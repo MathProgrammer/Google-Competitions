@@ -1,0 +1,27 @@
+Let f(i) be the sequence ending at i 
+
+f(i) = f(i - 1) + 1 or 1 depending on whether S[i] > S[i - 1] 
+
+------
+
+void solve()
+{
+    int length;
+    string S; 
+    cin >> length >> S;
+    
+    vector <int> answer(length + 1, 1);
+    for(int i = 1; i < length; i++)
+    {
+        if(S[i] > S[i - 1])
+        {
+            answer[i] = answer[i - 1] + 1;
+        }
+    }
+    
+    for(int i = 0; i < length; i++)
+    {
+        cout << answer[i] << " ";
+    }
+    cout << "\n";
+}
